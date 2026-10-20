@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Modal Verbs at Work — Writing & Speaking</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.12.1/html2pdf.bundle.min.js"></script>
+<style>
+  :root{--accent:#E24C3F;--accent-bg:#FCE9E7;--ink:#1A1A1A;--muted:#666;}
+  *{box-sizing:border-box;}
+  body{font-family:-apple-system,"Segoe UI",Calibri,Arial,sans-serif;color:var(--ink);background:#fafafa;margin:0;padding:24px 12px 60px;line-height:1.5;}
+  .wrap{max-width:820px;margin:0 auto;background:#fff;padding:36px 40px;border-radius:8px;box-shadow:0 1px 6px rgba(0,0,0,.08);}
+  h1{color:var(--accent);font-size:26px;margin:0 0 6px;}
+  h2{color:var(--accent);font-size:19px;margin:34px 0 12px;border-bottom:2px solid var(--accent-bg);padding-bottom:6px;}
+  h2.big{font-size:22px;background:var(--accent-bg);border:none;padding:10px 16px;border-radius:6px;margin-top:46px;}
+  .meta{margin:0 0 14px;font-size:14px;}
+  .meta em{color:var(--muted);}
+  .instructions{background:#fff8e6;border-left:4px solid #E8B93A;padding:10px 14px;font-size:14px;font-style:italic;color:#555;}
+  .box{background:var(--accent-bg);border-left:4px solid var(--accent);padding:14px 18px;text-align:center;color:#8A2E23;font-style:italic;font-size:14.5px;}
+  .endings{background:#f6f6f6;border:1px solid #e2e2e2;border-radius:6px;padding:14px 18px;font-size:14.5px;margin-top:10px;}
+  .endings p{margin:6px 0;}
+  ol{padding-left:20px;}
+  ol li{margin-bottom:18px;font-size:15px;}
+  .tag{display:inline-block;background:var(--ink);color:#fff;border-radius:12px;padding:1px 10px;font-size:12.5px;font-weight:700;margin-left:6px;vertical-align:middle;}
+  input.long{width:100%;border:none;border-bottom:2px solid #bbb;background:transparent;font-size:14.5px;font-family:inherit;padding:4px 2px;margin:6px 0 4px;color:var(--accent);font-weight:600;}
+  input.long:focus{outline:none;border-bottom-color:var(--accent);}
+  textarea{width:100%;border:1px solid #ccc;border-radius:6px;padding:12px;font-family:inherit;font-size:14.5px;resize:vertical;}
+  .check-btn{margin-top:14px;background:var(--accent);color:#fff;border:none;padding:9px 18px;border-radius:20px;font-size:13.5px;cursor:pointer;font-weight:600;}
+  .check-btn:hover{background:#c93b2e;}
+  .answers{margin-top:12px;background:#f4f9f4;border-left:4px solid #4a9d5b;padding:12px 16px;font-size:14px;color:#2e5c38;}
+  .answers p{margin:5px 0;}
+  .hidden{display:none;}
+  .speak-card{background:#f6f6f6;border:1px solid #e2e2e2;border-radius:8px;padding:14px 18px;margin-bottom:14px;}
+  .speak-card h3{margin:0 0 6px;font-size:16px;color:var(--ink);}
+  .speak-card p{margin:4px 0;font-size:14.5px;}
+  .speak-card .starters{font-size:13.5px;color:#8A2E23;font-style:italic;margin-top:6px;}
+  .timer{display:flex;align-items:center;gap:10px;margin-top:12px;flex-wrap:wrap;}
+  .time{font-variant-numeric:tabular-nums;font-size:22px;font-weight:700;min-width:64px;color:var(--ink);}
+  .time.warn{color:#c0261a;animation:pulse 1s infinite;}
+  @keyframes pulse{50%{opacity:.45;}}
+  .timer button{border:none;border-radius:18px;padding:7px 16px;font-size:13px;font-weight:600;cursor:pointer;}
+  .timer .go{background:var(--accent);color:#fff;}
+  .timer .rs{background:#e4e4e4;color:#333;}
+  .bar{flex:1;min-width:120px;height:8px;background:#e4e4e4;border-radius:4px;overflow:hidden;}
+  .bar i{display:block;height:100%;width:100%;background:var(--accent);transition:width 1s linear;}
+  .selfcheck label{display:block;margin:6px 0;font-size:15px;cursor:pointer;}
+  .selfcheck input{margin-right:8px;transform:scale(1.15);}
+  .footer-actions{margin-top:40px;text-align:center;}
+  .save-btn{background:#1a7a3c;color:#fff;border:none;padding:12px 26px;border-radius:22px;font-size:15px;cursor:pointer;font-weight:700;box-shadow:0 2px 6px rgba(26,122,60,.35);}
+  .save-btn:hover{background:#146030;}
+  .save-btn:disabled{background:#9bbfa6;cursor:wait;}
+  .save-note{font-size:12.5px;color:#888;margin:10px 0 0;}
+  .pdf-name-row{margin:14px 0;display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;}
+  .pdf-name-row input{border:1px solid #ccc;border-radius:6px;padding:8px 10px;font-size:14px;font-family:inherit;width:260px;}
+  @media (max-width:640px){.wrap{padding:22px 16px;}}
+</style>
+</head>
+<body>
+<div class="wrap" id="pdfContent">
+
+  <h1>Modal Verbs at Work</h1>
+  <p class="meta"><strong>Student:</strong> <span id="studentNameDisplay">Sueid</span> &nbsp;|&nbsp; <em>can, can't, have to, don't have to, should, shouldn't (A1/A2)</em></p>
+  <p class="instructions">Write your answers right here on the page. Your answers are saved automatically. At the end, click "Save as PDF".</p>
+
+  <h2>Key language</h2>
+  <div class="box">can &nbsp;·&nbsp; can't &nbsp;·&nbsp; have to &nbsp;·&nbsp; don't have to &nbsp;·&nbsp; should &nbsp;·&nbsp; shouldn't</div>
+  <div class="endings">
+    <p><strong>can</strong> → it is OK / it is allowed. <em>You can use the meeting room.</em></p>
+    <p><strong>can't</strong> → it is not allowed. <em>You can't share student information.</em></p>
+    <p><strong>have to</strong> → it is necessary (a rule). <em>We have to sign the enrollment form.</em></p>
+    <p><strong>don't have to</strong> → it is not necessary, but it is OK. <em>You don't have to come on Friday.</em></p>
+    <p><strong>should</strong> → good advice. <em>You should answer emails quickly.</em></p>
+    <p><strong>shouldn't</strong> → bad idea. <em>You shouldn't be late for meetings.</em></p>
+    <p>⚠️ <strong>can't</strong> and <strong>don't have to</strong> are different! <em>Can't</em> = not allowed. <em>Don't have to</em> = not necessary.</p>
+  </div>
+
+
+  <!-- ==================================================== -->
+  <!--  EXERCISE 1 — WRITING                                -->
+  <!-- ==================================================== -->
+  <h2 class="big">Exercise 1 — Make your sentences ✍️</h2>
+
+  <h2>Part A — Situations at work</h2>
+  <p>Read each situation. Write ONE sentence with the modal verb in the box.</p>
+  <ol>
+    <li>Every new student needs to sign an enrollment form. This is a rule. <span class="tag">have to</span>
+      <input class="long" placeholder="Write your sentence here..."></li>
+    <li>Students can pay online or at the office. They can choose. <span class="tag">don't have to</span>
+      <input class="long" placeholder="Write your sentence here..."></li>
+    <li>It is not allowed to share a student's phone number with other people. <span class="tag">can't</span>
+      <input class="long" placeholder="Write your sentence here..."></li>
+    <li>The meeting room is free this afternoon. You are allowed to use it. <span class="tag">can</span>
+      <input class="long" placeholder="Write your sentence here..."></li>
+    <li>Your colleague has 40 new emails and feels stressed. Give advice. <span class="tag">should</span>
+      <input class="long" placeholder="Write your sentence here..."></li>
+    <li>A colleague is always late to meetings. Give advice. <span class="tag">shouldn't</span>
+      <input class="long" placeholder="Write your sentence here..."></li>
+    <li>Your boss says the Friday meeting is optional. <span class="tag">don't have to</span>
+      <input class="long" placeholder="Write your sentence here..."></li>
+    <li>A parent calls and asks about prices. You want to offer help. <span class="tag">can</span>
+      <input class="long" placeholder="Write your sentence here..."></li>
+    <li>A student forgot an important document for enrollment. Give advice. <span class="tag">should</span>
+      <input class="long" placeholder="Write your sentence here..."></li>
+    <li>The office has a security rule: the front door must always be closed. <span class="tag">have to</span>
+      <input class="long" placeholder="Write your sentence here..."></li>
+  </ol>
+  <button class="check-btn no-pdf" onclick="toggle('ans1')">Show model answers (teacher)</button>
+  <div id="ans1" class="answers hidden">
+    <p>Many answers are possible. Examples:</p>
+    <p>1. New students have to sign an enrollment form.</p>
+    <p>2. Students don't have to pay at the office.</p>
+    <p>3. We can't share a student's phone number.</p>
+    <p>4. You can use the meeting room this afternoon.</p>
+    <p>5. You should answer the urgent emails first.</p>
+    <p>6. You shouldn't be late for meetings.</p>
+    <p>7. We don't have to go to the meeting on Friday.</p>
+    <p>8. I can help you with the prices.</p>
+    <p>9. The student should send the document by email today.</p>
+    <p>10. We have to close the front door.</p>
+  </div>
+
+
+  <h2>Part B — Our office rules</h2>
+  <p>Think about YOUR office. Finish each sentence with your own idea.</p>
+  <p>In my office, we have to <input class="long"></p>
+  <p>In my office, we can <input class="long"></p>
+  <p>In my office, we can't <input class="long"></p>
+  <p>In my office, we don't have to <input class="long"></p>
+  <p>A good colleague should <input class="long"></p>
+  <p>A good colleague shouldn't <input class="long"></p>
+
+
+  <h2>Part C — Advice for a new colleague</h2>
+  <p>A new colleague starts work in your office on Monday. Write 5 or 6 sentences to help him or her. Use <em>have to</em>, <em>can</em>, <em>can't</em>, <em>should</em> and <em>shouldn't</em>.</p>
+  <textarea rows="7" placeholder="Welcome to the team! On your first day, you have to..."></textarea>
+
+
+  <!-- ==================================================== -->
+  <!--  EXERCISE 2 — SPEAKING                               -->
+  <!-- ==================================================== -->
+  <h2 class="big">Exercise 2 — Speaking time 🎤</h2>
+  <p class="instructions">Use the timer on each card. Speak out loud. Do not write. Try to use the modal verbs in the box on every card.</p>
+
+  <div class="speak-card">
+    <h3>Card 1 — First day</h3>
+    <p>You are talking to a new colleague on his first day. Explain the rules of your office.</p>
+    <p class="starters">You have to... · You can... · You can't... · You don't have to...</p>
+    <div class="timer no-pdf" data-sec="60"><span class="time">1:00</span><div class="bar"><i></i></div><button class="go" type="button">▶ Start</button><button class="rs" type="button">Reset</button></div>
+  </div>
+
+  <div class="speak-card">
+    <h3>Card 2 — A phone call</h3>
+    <p>A parent calls to enroll a child in an English course. Explain what documents the parent has to bring and what the parent doesn't have to bring.</p>
+    <p class="starters">You have to bring... · You don't have to bring... · You can pay...</p>
+    <div class="timer no-pdf" data-sec="60"><span class="time">1:00</span><div class="bar"><i></i></div><button class="go" type="button">▶ Start</button><button class="rs" type="button">Reset</button></div>
+  </div>
+
+  <div class="speak-card">
+    <h3>Card 3 — A stressed colleague</h3>
+    <p>Your colleague has many emails, three meetings and five new students to enroll today. He is very stressed. Give him advice.</p>
+    <p class="starters">You should... · You shouldn't... · You can ask...</p>
+    <div class="timer no-pdf" data-sec="45"><span class="time">0:45</span><div class="bar"><i></i></div><button class="go" type="button">▶ Start</button><button class="rs" type="button">Reset</button></div>
+  </div>
+
+  <div class="speak-card">
+    <h3>Card 4 — Planning a meeting</h3>
+    <p>You want to schedule a team meeting. Talk to your colleague. Say when you can and can't meet, and what you have to do before the meeting.</p>
+    <p class="starters">I can meet on... · I can't meet on... because I have to... · Should we...?</p>
+    <div class="timer no-pdf" data-sec="60"><span class="time">1:00</span><div class="bar"><i></i></div><button class="go" type="button">▶ Start</button><button class="rs" type="button">Reset</button></div>
+  </div>
+
+  <div class="speak-card">
+    <h3>Card 5 — My real job</h3>
+    <p>Talk about your real job. Say 3 things you have to do every day, 2 things you don't have to do, and 1 thing you can't do at work.</p>
+    <p class="starters">Every day I have to... · I don't have to... · At work, I can't...</p>
+    <div class="timer no-pdf" data-sec="90"><span class="time">1:30</span><div class="bar"><i></i></div><button class="go" type="button">▶ Start</button><button class="rs" type="button">Reset</button></div>
+  </div>
+
+  <div class="speak-card">
+    <h3>Card 6 — The perfect office</h3>
+    <p>What should a good boss do? What shouldn't a good boss do? What should a good office have? Share your ideas.</p>
+    <p class="starters">A good boss should... · A good boss shouldn't... · A good office should have...</p>
+    <div class="timer no-pdf" data-sec="60"><span class="time">1:00</span><div class="bar"><i></i></div><button class="go" type="button">▶ Start</button><button class="rs" type="button">Reset</button></div>
+  </div>
+
+  <h2>Self-check</h2>
+  <div class="selfcheck">
+    <p>After speaking, tick what you did:</p>
+    <label><input type="checkbox"> I used <em>can</em> and <em>can't</em>.</label>
+    <label><input type="checkbox"> I used <em>have to</em> and <em>don't have to</em>.</label>
+    <label><input type="checkbox"> I used <em>should</em> and <em>shouldn't</em>.</label>
+    <label><input type="checkbox"> I did not mix up <em>can't</em> and <em>don't have to</em>.</label>
+    <label><input type="checkbox"> I spoke without stopping for the whole time.</label>
+  </div>
+
+
+  <!-- FOOTER -->
+  <div class="footer-actions no-pdf">
+    <p class="save-note">💾 Your answers are saved automatically in this browser while you type.</p>
+    <div class="pdf-name-row">
+      <label for="studentNameInput" style="font-size:13.5px;color:#555;">Your name (appears on the PDF):</label>
+      <input type="text" id="studentNameInput" value="Sueid">
+    </div>
+    <button class="save-btn" id="saveBtn" onclick="saveAsPDF()">💾 Save as PDF</button>
+  </div>
+
+</div>
+
+<script>
+  const STORAGE_KEY = 'modals_work_writing_speaking_sueid_v1';
+
+  function getFields(){
+    return Array.from(document.querySelectorAll('#pdfContent input, #pdfContent select, #pdfContent textarea'));
+  }
+  function saveAnswers(){
+    try{
+      const data = {};
+      getFields().forEach((el, i) => {
+        if(el.type === 'radio'){ if(el.checked) data['radio_' + el.name] = el.value; }
+        else if(el.type === 'checkbox'){ data['c' + i] = el.checked; }
+        else { data['f' + i] = el.value; }
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }catch(e){}
+  }
+  function loadAnswers(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(!raw) return;
+      const data = JSON.parse(raw);
+      getFields().forEach((el, i) => {
+        if(el.type === 'radio'){ if(data['radio_' + el.name] === el.value) el.checked = true; }
+        else if(el.type === 'checkbox'){ if(('c' + i) in data) el.checked = data['c' + i]; }
+        else if(('f' + i) in data){ el.value = data['f' + i]; }
+      });
+    }catch(e){}
+  }
+  function toggle(id){ document.getElementById(id).classList.toggle('hidden'); }
+  function autoGrow(el){ el.style.height = 'auto'; el.style.height = (el.scrollHeight + 4) + 'px'; }
+  document.querySelectorAll('textarea').forEach(t => t.addEventListener('input', () => autoGrow(t)));
+
+  const nameInput = document.getElementById('studentNameInput');
+  const nameDisplay = document.getElementById('studentNameDisplay');
+  nameInput.addEventListener('input', () => {
+    nameDisplay.textContent = nameInput.value.trim() || '___________';
+  });
+
+  document.addEventListener('input', saveAnswers);
+  document.addEventListener('change', saveAnswers);
+  window.addEventListener('load', () => {
+    loadAnswers();
+    document.querySelectorAll('textarea').forEach(t => autoGrow(t));
+    nameDisplay.textContent = nameInput.value.trim() || '___________';
+  });
+
+  // ----- Speaking timers (one delegated listener) -----
+  const timers = new WeakMap();
+  function fmt(s){ return Math.floor(s/60) + ':' + String(s%60).padStart(2,'0'); }
+  function paint(box, left, total){
+    const t = box.querySelector('.time');
+    t.textContent = fmt(left);
+    t.classList.toggle('warn', left <= 10 && left > 0);
+    box.querySelector('.bar i').style.width = (left/total*100) + '%';
+  }
+  function stopTimer(box){
+    const st = timers.get(box);
+    if(st && st.id){ clearInterval(st.id); st.id = null; }
+  }
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.timer button');
+    if(!btn) return;
+    const box = btn.closest('.timer');
+    const total = parseInt(box.dataset.sec, 10);
+    const go = box.querySelector('.go');
+    if(btn.classList.contains('rs')){
+      stopTimer(box); timers.set(box, {left: total, id: null});
+      paint(box, total, total); go.textContent = '▶ Start'; return;
+    }
+    let st = timers.get(box) || {left: total, id: null};
+    if(st.id){ stopTimer(box); go.textContent = '▶ Continue'; return; }
+    if(st.left <= 0) st.left = total;
+    timers.set(box, st);
+    go.textContent = '⏸ Pause';
+    st.id = setInterval(() => {
+      st.left--; paint(box, st.left, total);
+      if(st.left <= 0){ stopTimer(box); go.textContent = '▶ Start again'; }
+    }, 1000);
+  });
+
+  function saveAsPDF(){
+    const btn = document.getElementById('saveBtn');
+    btn.disabled = true; btn.textContent = '⏳ Creating PDF...';
+    const noPdfEls = document.querySelectorAll('.no-pdf');
+    noPdfEls.forEach(el => el.style.visibility = 'hidden');
+    const el = document.getElementById('pdfContent');
+    const name = nameInput.value.trim() || 'student';
+    const fileName = STORAGE_KEY + '_' + name.replace(/[^a-z0-9]+/gi, '_') + '.pdf';
+    const opt = {
+      margin: [10, 10, 10, 10], filename: fileName,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+    };
+    const restore = () => { noPdfEls.forEach(x => x.style.visibility = ''); btn.disabled = false; btn.textContent = '💾 Save as PDF'; };
+    html2pdf().set(opt).from(el).save().then(restore).catch(() => {
+      restore(); alert('Could not create the PDF. Try again or use Ctrl+P / Cmd+P.');
+    });
+  }
+</script>
+</body>
+</html>
